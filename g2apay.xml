@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension method="upgrade" group="vmpayment" type="plugin" version="3.1">
+    <name>G2A Pay Payment Module</name>
+    <creationDate>July 2016</creationDate>
+    <author>G2A.COM Limited</author>
+    <authorUrl>https://pay.g2a.com</authorUrl>
+    <copyright>(c) 2016 G2A.COM. All rights reserved.</copyright>
+    <license>http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)</license>
+    <version>1.0.0</version>
+
+    <description>
+        <![CDATA[
+			Easily integrate 100+ global and local payment methods with all-in-one solution.
+		]]>
+    </description>
+
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_vmpayment_g2apay.ini</language>
+    </languages>
+
+    <files>
+        <!-- All other files will be handled by VirtueMart 3 -->
+        <folder>g2apay</folder>
+        <folder>language</folder>
+        <filename plugin="g2apay">g2apay.php</filename>
+    </files>
+
+    <vmconfig>
+        <fields name="params">
+            <fieldset name="payment" addfieldpath="/plugins/vmpayment/g2apay/g2apay/fields">
+                <field type="vmtitle" description="" default="VMPAYMENT_G2APAY_G2APAY_CONF" />
+                <field type="text" name="apihash" default="" label="VMPAYMENT_G2APAY_API_HASH_LBL" size="50"
+                       required="true"/>
+                <field type="text" name="apisecret" default="" label="VMPAYMENT_G2APAY_API_SECRET_LBL" size="50"
+                       required="true" />
+                <field type="text" name="merchantemail" label="VMPAYMENT_G2APAY_MERCHANT_EMAIL_LBL" size="50"
+                       required="true"/>
+                <field class="" name="sandbox" type="radio" default="1" label="VMPAYMENT_G2APAY_ENVIRONMENT_LBL">
+                    <option value="0">VMPAYMENT_G2APAY_PRODUCTION</option>
+                    <option value="1">VMPAYMENT_G2APAY_SANDBOX</option>
+                </field>
+                <field name="ipn_url" class="required" type="g2aipnurl" label=""/>
+                <field type="vmtitle" description="" default="VMPAYMENT_G2APAY_PAYMENT_STATUSES_LBL" />
+                <field type="note" name="paymentnote" label="" description="VMPAYMENT_G2APAY_PAYMENT_STATUSES_WARNING"
+                       size="50" />
+                <field name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P"
+                       label="VMPAYMENT_G2APAY_PAYMENT_STATUSES_PENDING" />
+                <field name="status_success" type="vmorderstate" scope="com_virtuemart" default="C"
+                       label="VMPAYMENT_G2APAY_PAYMENT_STATUSES_SUCCESS" />
+                <field name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X"
+                       label="VMPAYMENT_G2APAY_PAYMENT_STATUSES_CANCEL" />
+                <field name="status_refunded" type="vmorderstate" scope="com_virtuemart" default="R"
+                       label="VMPAYMENT_G2APAY_PAYMENT_STATUSES_REFUND" />
+                <field name="status_partial_refunded" type="vmorderstate" scope="com_virtuemart" default="R"
+                       label="VMPAYMENT_G2APAY_PAYMENT_STATUSES_PARTIAL_REFUND" />
+            </fieldset>
+        </fields>
+    </vmconfig>
+</extension>

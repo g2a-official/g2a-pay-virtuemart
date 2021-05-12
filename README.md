@@ -1,4 +1,6 @@
-# G2A Pay module for VirtueMart
+# ⚠ This repository is now DEPRECATED and will be deleted after 1st of August 2021. We recommend to use [Zen](https://www.zen.com/) in new projects.
+
+## G2A Pay module for VirtueMart
 
 VirtueMart is a free, open source eCommerce solution, compatible with Joomla 2.5 and Joomla 3, with many new features. With a clean architecture, increased stability and improved performance, VM3 went to the next level.
 
